@@ -658,8 +658,6 @@ SIMPLE_STAT_FUNCS = [
     ep.max_drawdown,
     ep.omega_ratio,
     ep.sortino_ratio,
-    stats.skew,
-    stats.kurtosis,
     ep.tail_ratio,
     value_at_risk
 ]
@@ -679,8 +677,6 @@ STAT_FUNC_NAMES = {
     'max_drawdown': 'Max drawdown',
     'omega_ratio': 'Omega ratio',
     'sortino_ratio': 'Sortino ratio',
-    'skew': 'Skew',
-    'kurtosis': 'Kurtosis',
     'tail_ratio': 'Tail ratio',
     'common_sense_ratio': 'Common sense ratio',
     'value_at_risk': 'Daily value at risk',
