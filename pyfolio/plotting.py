@@ -263,7 +263,7 @@ def plot_monthly_returns_dist(returns, ax=None, **kwargs):
 
     ax.hist(
         100 * monthly_ret_table,
-        color='orangered',
+        color='darkviolet',
         alpha=0.80,
         bins=20,
         **kwargs)
@@ -318,7 +318,7 @@ def plot_holdings(returns, positions, legend_loc='best', ax=None, **kwargs):
     df_holdings_by_month = df_holdings.resample('1M').mean()
     df_holdings.plot(color='steelblue', alpha=0.6, lw=0.5, ax=ax, **kwargs)
     df_holdings_by_month.plot(
-        color='orangered',
+        color='darkviolet',
         lw=2,
         ax=ax,
         **kwargs)
@@ -483,7 +483,7 @@ def plot_drawdown_underwater(returns, ax=None, **kwargs):
     df_cum_rets = ep.cum_returns(returns, starting_value=1.0)
     running_max = np.maximum.accumulate(df_cum_rets)
     underwater = -100 * ((running_max - df_cum_rets) / running_max)
-    (underwater).plot(ax=ax, kind='area', color='coral', alpha=0.7, **kwargs)
+    (underwater).plot(ax=ax, kind='area', color='darkviolet', alpha=0.7, **kwargs)
     ax.set_ylabel('Drawdown')
     ax.set_title('Underwater plot')
     ax.set_xlabel('')
@@ -926,7 +926,7 @@ def plot_rolling_volatility(returns, factor_returns=None,
 
     rolling_vol_ts = timeseries.rolling_volatility(
         returns, rolling_window)
-    rolling_vol_ts.plot(alpha=.7, lw=3, color='orangered', ax=ax,
+    rolling_vol_ts.plot(alpha=.7, lw=3, color='darkviolet', ax=ax,
                         **kwargs)
     if factor_returns is not None:
         rolling_vol_ts_factor = timeseries.rolling_volatility(
@@ -993,7 +993,7 @@ def plot_rolling_sharpe(returns, factor_returns=None,
 
     rolling_sharpe_ts = timeseries.rolling_sharpe(
         returns, rolling_window)
-    rolling_sharpe_ts.plot(alpha=.7, lw=3, color='orangered', ax=ax,
+    rolling_sharpe_ts.plot(alpha=.7, lw=3, color='darkviolet', ax=ax,
                            **kwargs)
 
     if factor_returns is not None:
@@ -1367,7 +1367,7 @@ def plot_turnover(returns, transactions, positions,
     df_turnover_by_month = df_turnover.resample("M").mean()
     df_turnover.plot(color='steelblue', alpha=1.0, lw=0.5, ax=ax, **kwargs)
     df_turnover_by_month.plot(
-        color='orangered',
+        color='darkviolet',
         alpha=0.5,
         lw=2,
         ax=ax,
@@ -1918,7 +1918,7 @@ def plot_cones(name, bounds, oos_returns, num_samples=1000, ax=None,
     bounds_tmp = bounds.copy()
     returns_tmp = returns.copy()
     cone_start = returns.index[0]
-    colors = ["green", "orange", "orangered", "darkred"]
+    colors = ["green", "darkviolet", "darkviolet", "darkred"]
 
     for c in range(num_strikes + 1):
         if c > 0:
